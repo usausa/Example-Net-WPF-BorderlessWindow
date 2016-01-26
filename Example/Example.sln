@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Example.WpfApplication", "Example.WpfApplication\Example.WpfApplication.csproj", "{E89BC0A7-C524-4199-872E-572B9F5D393C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Smart.Windows", "..\Net-Smart-Windows\Smart.Windows\Smart.Windows.csproj", "{096D42E1-E503-4BE7-971D-6351E60319E1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Smart.Windows.Reactive", "..\Net-Smart-Windows\Smart.Windows.Reactive\Smart.Windows.Reactive.csproj", "{FD0246AE-C63C-468F-A0BF-7C48777211C0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Library", "Library", "{97824D42-8047-46BD-8B94-666456601923}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{F691320C-DE36-444E-9245-AA4D1794D5CE}"
+	ProjectSection(SolutionItems) = preProject
+		..\.gitignore = ..\.gitignore
+		..\.gitmodules = ..\.gitmodules
+		Example.ruleset = Example.ruleset
+		Example.sln.DotSettings = Example.sln.DotSettings
+		..\README.md = ..\README.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E89BC0A7-C524-4199-872E-572B9F5D393C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E89BC0A7-C524-4199-872E-572B9F5D393C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E89BC0A7-C524-4199-872E-572B9F5D393C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E89BC0A7-C524-4199-872E-572B9F5D393C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{096D42E1-E503-4BE7-971D-6351E60319E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{096D42E1-E503-4BE7-971D-6351E60319E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{096D42E1-E503-4BE7-971D-6351E60319E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{096D42E1-E503-4BE7-971D-6351E60319E1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD0246AE-C63C-468F-A0BF-7C48777211C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD0246AE-C63C-468F-A0BF-7C48777211C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD0246AE-C63C-468F-A0BF-7C48777211C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD0246AE-C63C-468F-A0BF-7C48777211C0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{096D42E1-E503-4BE7-971D-6351E60319E1} = {97824D42-8047-46BD-8B94-666456601923}
+		{FD0246AE-C63C-468F-A0BF-7C48777211C0} = {97824D42-8047-46BD-8B94-666456601923}
+	EndGlobalSection
+EndGlobal

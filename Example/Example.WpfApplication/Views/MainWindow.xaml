@@ -1,0 +1,31 @@
+﻿<metro:Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        xmlns:metro="http://schemas.codeplex.com/elysium"
+        xmlns:params="http://schemas.codeplex.com/elysium/params"
+        xmlns:si="clr-namespace:Smart.Windows.Interactivity;assembly=Smart.Windows"
+        xmlns:views="clr-namespace:Example.WpfApplication.Views"
+        x:Class="Example.WpfApplication.Views.MainWindow"
+        mc:Ignorable="d"
+        d:DataContext="{d:DesignInstance Type={x:Type views:MainViewModel}}"
+        metro:Window.IsMainWindow="True"
+        params:Design.Theme="Light"
+        params:Design.AccentBrush="{x:Static metro:AccentBrushes.Blue}"
+        params:Design.ContrastBrush="White"
+        params:Window.MinimizeButtonToolTip="Minimize"
+        params:Window.MaximizeButtonToolTip="Maximize"
+        params:Window.RestoreButtonToolTip="Restore"
+        params:Window.CloseButtonToolTip="Close"
+        WindowStartupLocation="CenterScreen"
+        Title="MainWindow" Height="320" Width="480">
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="Closed">
+            <si:DataContextDisposeAction/>
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
+    <Grid>
+    </Grid>
+</metro:Window>
