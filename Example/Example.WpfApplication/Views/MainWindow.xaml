@@ -4,9 +4,10 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions"
         xmlns:metro="http://schemas.codeplex.com/elysium"
         xmlns:params="http://schemas.codeplex.com/elysium/params"
-        xmlns:si="clr-namespace:Smart.Windows.Interactivity;assembly=Smart.Windows"
+        xmlns:swi="clr-namespace:Smart.Windows.Interactivity;assembly=Smart.Windows"
         xmlns:views="clr-namespace:Example.WpfApplication.Views"
         x:Class="Example.WpfApplication.Views.MainWindow"
         mc:Ignorable="d"
@@ -20,10 +21,27 @@
         params:Window.RestoreButtonToolTip="Restore"
         params:Window.CloseButtonToolTip="Close"
         WindowStartupLocation="CenterScreen"
-        Title="MainWindow" Height="320" Width="480">
+        Title="MainWindow"
+        Height="320"
+        Width="480">
+    <metro:Window.TitleBar>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="1" Orientation="Horizontal">
+                <ToggleButton Content="Operation" IsChecked="{Binding WindowManager.OperationVisible}" />
+                <ToggleButton Content="Result" IsChecked="{Binding WindowManager.ResultVisible}" />
+            </StackPanel>
+        </Grid>
+    </metro:Window.TitleBar>
     <i:Interaction.Triggers>
+        <i:EventTrigger EventName="Closing">
+            <ei:CallMethodAction TargetObject="{Binding WindowManager}" MethodName="Save"/>
+        </i:EventTrigger>
         <i:EventTrigger EventName="Closed">
-            <si:DataContextDisposeAction/>
+            <swi:DataContextDisposeAction/>
         </i:EventTrigger>
     </i:Interaction.Triggers>
     <Grid>

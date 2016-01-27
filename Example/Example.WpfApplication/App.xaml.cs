@@ -1,4 +1,6 @@
-﻿namespace Example.WpfApplication
+﻿using Example.WpfApplication.Infrastructure;
+
+namespace Example.WpfApplication
 {
     using System;
     using System.Windows;
@@ -32,7 +34,7 @@
             RegisterComponents();
 
             MainWindow = kernel.Get<MainWindow>();
-            MainWindow.Show();
+            kernel.Get<IWindowManager>().Load();
         }
 
         /// <summary>
@@ -41,18 +43,23 @@
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Reliability", "CA2000:スコープを失う前にオブジェクトを破棄", Justification = "Factory")]
         private void RegisterComponents()
         {
+            // Infrastructure
+            kernel.Bind<IDependencyResolver>().To<NinjectDependencyResolver>().InSingletonScope();
+
             // Application model
             kernel.Bind<ApplicationModel>().ToSelf();
 
             // View & ViewModel
+            kernel.Bind<IWindowManager>().To<WindowManager>().InSingletonScope();
+
             kernel.Bind<OperationViewModel>().ToSelf();
-            kernel.Bind<OperationWindow>().ToSelf();
+            kernel.Bind<OperationWindow>().ToSelf().InSingletonScope();
 
             kernel.Bind<ResultViewModel>().ToSelf();
-            kernel.Bind<ResultWindow>().ToSelf();
+            kernel.Bind<ResultWindow>().ToSelf().InSingletonScope();
 
             kernel.Bind<MainViewModel>().ToSelf();
-            kernel.Bind<MainWindow>().ToSelf();
+            kernel.Bind<MainWindow>().ToSelf().InSingletonScope();
         }
     }
 }

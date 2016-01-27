@@ -3,9 +3,33 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions"
+        xmlns:swi="clr-namespace:Smart.Windows.Interactivity;assembly=Smart.Windows"
+        xmlns:views="clr-namespace:Example.WpfApplication.Views"
         mc:Ignorable="d"
-        Title="ResultWindow" Height="300" Width="300">
-    <Grid>
-        
-    </Grid>
+        d:DataContext="{d:DesignInstance Type={x:Type views:ResultViewModel}}"
+        Title="ResultWindow"
+        Height="300" Width="300"
+        AllowsTransparency="True" WindowStyle="None" ResizeMode="NoResize" Background="Transparent" BorderThickness="3">
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="Closing">
+            <ei:CallMethodAction TargetObject="{Binding Mode=OneWay}" MethodName="Hide"/>
+            <swi:CancelEventHandleAction Cancel="True"/>
+        </i:EventTrigger>
+        <i:EventTrigger EventName="Closed">
+            <swi:DataContextDisposeAction/>
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
+    <i:Interaction.Behaviors>
+        <swi:DragMoveBehavior/>
+    </i:Interaction.Behaviors>
+    <Border>
+        <Border.Effect>
+            <DropShadowEffect BlurRadius="5" Color="Black" Opacity="0.8" ShadowDepth="0.5" />
+        </Border.Effect>
+        <Grid Background="White">
+
+        </Grid>
+    </Border>
 </Window>
