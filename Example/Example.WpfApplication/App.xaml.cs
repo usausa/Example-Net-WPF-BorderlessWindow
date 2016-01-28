@@ -1,10 +1,9 @@
-﻿using Example.WpfApplication.Infrastructure;
-
-namespace Example.WpfApplication
+﻿namespace Example.WpfApplication
 {
     using System;
     using System.Windows;
 
+    using Example.WpfApplication.Infrastructure;
     using Example.WpfApplication.Models;
     using Example.WpfApplication.Views;
 
@@ -47,7 +46,7 @@ namespace Example.WpfApplication
             kernel.Bind<IDependencyResolver>().To<NinjectDependencyResolver>().InSingletonScope();
 
             // Application model
-            kernel.Bind<ApplicationModel>().ToSelf();
+            kernel.Bind<Counter>().ToConstant(new Counter(5));
 
             // View & ViewModel
             kernel.Bind<IWindowManager>().To<WindowManager>().InSingletonScope();

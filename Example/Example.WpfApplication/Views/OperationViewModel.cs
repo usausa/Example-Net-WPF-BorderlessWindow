@@ -2,6 +2,8 @@
 {
     using Smart.Windows.ViewModels;
 
+    using Example.WpfApplication.Models;
+
     /// <summary>
     ///
     /// </summary>
@@ -12,10 +14,17 @@
         /// <summary>
         ///
         /// </summary>
+        public Counter Counter { get; }
+
+        /// <summary>
+        ///
+        /// </summary>
         /// <param name="windowManager"></param>
-        public OperationViewModel(IWindowManager windowManager)
+        /// <param name="counter"></param>
+        public OperationViewModel(IWindowManager windowManager, Counter counter)
         {
             this.windowManager = windowManager;
+            Counter = counter;
         }
 
         /// <summary>
