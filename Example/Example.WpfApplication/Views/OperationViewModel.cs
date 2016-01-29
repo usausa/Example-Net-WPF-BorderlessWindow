@@ -1,8 +1,8 @@
 ﻿namespace Example.WpfApplication.Views
 {
-    using Smart.Windows.ViewModels;
-
     using Example.WpfApplication.Models;
+
+    using Smart.Windows.ViewModels;
 
     /// <summary>
     ///
