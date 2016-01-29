@@ -166,11 +166,11 @@
     <Analyzer Include="..\packages\StyleCop.Analyzers.1.0.0-rc3\analyzers\dotnet\cs\StyleCop.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Net-Smart-Windows\Smart.Windows.Reactive\Smart.Windows.Reactive.csproj">
+    <ProjectReference Include="..\..\Smart.Windows\Smart.Windows.Reactive\Smart.Windows.Reactive.csproj">
       <Project>{fd0246ae-c63c-468f-a0bf-7c48777211c0}</Project>
       <Name>Smart.Windows.Reactive</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Net-Smart-Windows\Smart.Windows\Smart.Windows.csproj">
+    <ProjectReference Include="..\..\Smart.Windows\Smart.Windows\Smart.Windows.csproj">
       <Project>{096d42e1-e503-4be7-971d-6351e60319e1}</Project>
       <Name>Smart.Windows</Name>
     </ProjectReference>

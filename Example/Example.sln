@@ -5,9 +5,9 @@ VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Example.WpfApplication", "Example.WpfApplication\Example.WpfApplication.csproj", "{E89BC0A7-C524-4199-872E-572B9F5D393C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Smart.Windows", "..\Net-Smart-Windows\Smart.Windows\Smart.Windows.csproj", "{096D42E1-E503-4BE7-971D-6351E60319E1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Smart.Windows", "..\Smart.Windows\Smart.Windows\Smart.Windows.csproj", "{096D42E1-E503-4BE7-971D-6351E60319E1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Smart.Windows.Reactive", "..\Net-Smart-Windows\Smart.Windows.Reactive\Smart.Windows.Reactive.csproj", "{FD0246AE-C63C-468F-A0BF-7C48777211C0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Smart.Windows.Reactive", "..\Smart.Windows\Smart.Windows.Reactive\Smart.Windows.Reactive.csproj", "{FD0246AE-C63C-468F-A0BF-7C48777211C0}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Library", "Library", "{97824D42-8047-46BD-8B94-666456601923}"
 EndProject
