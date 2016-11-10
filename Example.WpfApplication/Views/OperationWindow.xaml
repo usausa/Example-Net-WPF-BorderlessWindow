@@ -1,0 +1,61 @@
+﻿<Window x:Class="Example.WpfApplication.Views.OperationWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions"
+        xmlns:fa="http://schemas.fontawesome.io/icons/"
+        xmlns:swi="clr-namespace:Smart.Windows.Interactivity;assembly=Smart.Windows"
+        xmlns:views="clr-namespace:Example.WpfApplication.Views"
+        mc:Ignorable="d"
+        d:DataContext="{d:DesignInstance Type={x:Type views:OperationViewModel}}"
+        Title="OperationWindow"
+        Height="80" Width="300"
+        AllowsTransparency="True" WindowStyle="None" ResizeMode="NoResize" Background="Transparent" BorderThickness="3">
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="Closing">
+            <ei:CallMethodAction TargetObject="{Binding Mode=OneWay}" MethodName="Hide"/>
+            <swi:CancelEventHandleAction Cancel="True"/>
+        </i:EventTrigger>
+        <i:EventTrigger EventName="Closed">
+            <swi:DataContextDisposeAction/>
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
+    <i:Interaction.Behaviors>
+        <swi:DragMoveBehavior/>
+    </i:Interaction.Behaviors>
+    <Border>
+        <Border.Effect>
+            <DropShadowEffect BlurRadius="5" Color="Black" Opacity="0.8" ShadowDepth="0.5" />
+        </Border.Effect>
+        <Grid Background="White">
+            <Button HorizontalAlignment="Left" Margin="10,10,0,0" Width="80" Height="32" VerticalAlignment="Top"
+                    IsEnabled="{Binding Counter.EnableDecrement, Mode=OneWay}"
+                    fa:Awesome.Content="CaretLeft" TextElement.FontFamily="pack://application:,,,/FontAwesome.WPF;component/#FontAwesome">
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="Click">
+                        <ei:CallMethodAction TargetObject="{Binding Counter}" MethodName="Decrement"/>
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+            </Button>
+            <Button HorizontalAlignment="Left" Margin="95,10,0,0" Width="80" Height="32" VerticalAlignment="Top"
+                    IsEnabled="{Binding Counter.EnableIncrement, Mode=OneWay}"
+                    fa:Awesome.Content="CaretRight" TextElement.FontFamily="pack://application:,,,/FontAwesome.WPF;component/#FontAwesome">
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="Click">
+                        <ei:CallMethodAction TargetObject="{Binding Counter}" MethodName="Increment"/>
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+            </Button>
+            <Button HorizontalAlignment="Left" Margin="180,10,0,0" Width="80" Height="32" VerticalAlignment="Top"
+                    fa:Awesome.Content="Eraser" TextElement.FontFamily="pack://application:,,,/FontAwesome.WPF;component/#FontAwesome">
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="Click">
+                        <ei:CallMethodAction TargetObject="{Binding Counter}" MethodName="Reset"/>
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+            </Button>
+        </Grid>
+    </Border>
+</Window>
