@@ -1,3 +1,3 @@
-# Example-Net-WPF-BorderlessWindow
+# Moved
 
-WPF Borderless Window example.
+Moved to [Example-Net-WPF](https://github.com/usausa/Example-Net-WPF/tree/master/BorderlessWindow).
